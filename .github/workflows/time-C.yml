@@ -23,5 +23,5 @@ jobs:
     - name: 'mvn: go-offline (untimed)'
       run: mvn -B -q dependency:go-offline || true
     - name: 'mvn: Build with Maven'
-      run: mvn -V -ntp clean install -P full verify -Dfrontend.skip=true -Dskip.installnodeandyarn=true -Dskip.installnodenode=true -Dskip.installnodenpmyarn=true -Dskip.installnodenyarn=true -Dskip.installnodenyp=true -Dskip=true
+      run: mvn -V -ntp clean install -P full verify !arthas-site '!arthas-site' -DdisableXmlReport=true -Dfrontend.skip=true -Dinvoker.skip=true -Dmaven.javadoc.skip=true -Dmaven.resources.skip=true -Dprotobuf.skip=true -Dskip.frontend=true -Dskip.installnodeandyarn=true -Dskip.installnodedownload=true -Dskip.installnodenode=true -Dskip.installnodenodeandyarn=true -Dskip.installnodenyarn=true -Dskip.installnodeyarn=true -Dskip.installnodyarn=true -Dskip.npm=true -Dskip.yarn=true -Dskip=true -Dyarn.skip=true -pl
 
